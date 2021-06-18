@@ -1,0 +1,50 @@
+#login {
+  padding: 0;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#login h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 600;
+  color: #438aca;
+  margin-bottom: 0;
+}
+
+#login h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+#login .login-form {
+  width: 400px;
+  min-width: 400px;
+  padding: 0 0 30px;
+  background: #fff;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#login .login-form .login-form-container {
+  padding: 0 50px;
+  text-align: left;
+}
+
+.bg-login-register {
+  width: 100%;
+  background: url("/img/inventory-login.jpeg") center center no-repeat;
+  background-size: cover;
+}
+

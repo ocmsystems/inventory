@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon; 
 use Validator;
 
-use App\ProductList;
+use App\Models\ProductList;
 use App\WarehouseList;
 use App\Models\ReturnDetails;
 use App\Models\Returns;

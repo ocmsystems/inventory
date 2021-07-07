@@ -43,7 +43,7 @@ class Returns extends Model {
     
     public function productlist()
     {
-        return $this->hasOne('App\ProductList', 'id', 'productlist_id');
+        return $this->hasOne('App\Models\ProductList', 'id', 'productlist_id');
     }
 
 

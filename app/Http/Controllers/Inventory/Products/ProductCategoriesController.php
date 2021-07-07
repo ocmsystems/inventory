@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Inventory\Products;
 use App\Http\Controllers\Controller;
 use Redirect;
 use Schema;
-use App\ProductCategories;
+use App\Models\ProductCategories;
 use App\Http\Requests\CreateProductCategoriesRequest;
 use App\Http\Requests\UpdateProductCategoriesRequest;
 use Illuminate\Http\Request;

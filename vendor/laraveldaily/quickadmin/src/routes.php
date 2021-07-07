@@ -155,8 +155,8 @@ Route::group([
 //     Route::group([
 //         'middleware' => 'role'
 //     ], function () {
-//         // Route::resource('admin/users', 'UsersController');
-//         // Route::resource('admin/roles', 'RolesController');
+//         Route::resource('admin/users', 'UsersController');
+//         Route::resource('admin/roles', 'RolesController');
 //     });
 //     Route::auth();
 // });

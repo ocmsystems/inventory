@@ -36,8 +36,8 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
-
+        // $this->guard()->login($user);
+        session()->flash('success', 'Registration successful. Your login credentials will be sent to your email within 24 hours.');
         return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());
     }
@@ -61,6 +61,5 @@ trait RegistersUsers
      */
     protected function registered(Request $request, $user)
     {
-        exit();
     }
 }

@@ -48,3 +48,7 @@
   background-size: cover;
 }
 
+table.dataTable td {
+  border: none;
+}
+

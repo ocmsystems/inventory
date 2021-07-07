@@ -86,9 +86,9 @@ $modules = $approverObj->modules;
         $('.datetimepicker').daterangepicker({
             singleDatePicker: true,
             locale: {
-                format: 'MMM DD, YYYY '
+                format: 'MMM DD, YYYY'
             },
-            minDate: moment(),
+            // minDate: moment(),
         });
 
         $('.datepicker').daterangepicker({

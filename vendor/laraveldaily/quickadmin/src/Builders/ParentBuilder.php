@@ -37,11 +37,15 @@ class ParentBuilder{
         
         if (! file_exists(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName))) {
             mkdir(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName));
+            // chown(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName), 'paulangat');
+            // chgrp(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName), '_www');
             chmod(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName), 0775);
         }
 
         if (! file_exists(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName))) {
             mkdir(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName));
+            // chown(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName), 'paulangat');
+            // chgrp(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName), '_www');
             chmod(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $this->dir_parent_name . $camelName), 0775);
         }
 

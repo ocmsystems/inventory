@@ -348,15 +348,15 @@ class ViewsBuilder
      */
     private function publish($template)
     {
-        if (! file_exists(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . $this->parent_path .  DIRECTORY_SEPARATOR  . $this->path))) {
-            mkdir(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . $this->parent_path .  DIRECTORY_SEPARATOR  . $this->path));
-            chmod(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . $this->parent_path .  DIRECTORY_SEPARATOR), 0777);
+        if (! file_exists(base_path('resources' . DIRECTORY_SEPARATOR . 'views' .  DIRECTORY_SEPARATOR . $this->parentDir  . $this->path))) {
+            mkdir(base_path('resources' . DIRECTORY_SEPARATOR . 'views' .  DIRECTORY_SEPARATOR . $this->parentDir  . $this->path));
+            chmod(base_path('resources' . DIRECTORY_SEPARATOR . 'views' .  DIRECTORY_SEPARATOR . $this->parentDir . $this->path), 0777);
         }
-        file_put_contents(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . $this->parent_path .  DIRECTORY_SEPARATOR . $this->path . DIRECTORY_SEPARATOR . 'index.blade.php'),
+        file_put_contents(base_path('resources' . DIRECTORY_SEPARATOR . 'views' .  DIRECTORY_SEPARATOR . $this->parentDir . $this->path . DIRECTORY_SEPARATOR . 'index.blade.php'),
             $template[0]);
-        file_put_contents(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . $this->parent_path .  DIRECTORY_SEPARATOR . $this->path . DIRECTORY_SEPARATOR . 'edit.blade.php'),
+        file_put_contents(base_path('resources' . DIRECTORY_SEPARATOR . 'views' .  DIRECTORY_SEPARATOR . $this->parentDir . $this->path . DIRECTORY_SEPARATOR . 'edit.blade.php'),
             $template[1]);
-        file_put_contents(base_path('resources' . DIRECTORY_SEPARATOR . 'views' . $this->parent_path .  DIRECTORY_SEPARATOR . $this->path . DIRECTORY_SEPARATOR . 'create.blade.php'),
+        file_put_contents(base_path('resources' . DIRECTORY_SEPARATOR . 'views' .  DIRECTORY_SEPARATOR . $this->parentDir . $this->path . DIRECTORY_SEPARATOR . 'create.blade.php'),
             $template[2]);
     }
 

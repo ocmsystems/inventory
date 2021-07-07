@@ -31,4 +31,11 @@ class LoginController extends Controller
         $this->redirectTo = config('quickadmin.route');
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+
+    protected function credentials(\Illuminate\Http\Request $request)
+    {
+        //return $request->only($this->username(), 'password');
+        return ['email' => $request->{$this->username()}, 'password' => $request->password, 'status' => 1];
+    }
 }

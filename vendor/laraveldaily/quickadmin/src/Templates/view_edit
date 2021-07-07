@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
+{!! Form::model($$MODEL$, array($FILES$'class' => 'form-horizontal', 'id' => 'form-with-validation', 'method' => 'PATCH', 'route' => array(config('quickadmin.route').'.$ROUTE$.update', $$RESOURCE$->id))) !!}
 
 <div class="header-title">
     <div class="card">
@@ -13,7 +14,7 @@
         <h3 class="mt-2 ml-3"> {!! link_to_route(config('quickadmin.route').'.$ROUTE$.index', '$TITLE$' , null) !!}</h3>
 
         <div class="btn-group ml-3">
-            {!! link_to_route(config('quickadmin.route').'.$ROUTE$.create', 'Create' , null, array('class' => 'btn btn-primary')) !!} 
+            {!! Form::submit('Update' , array('class' => 'btn btn-primary')) !!}
             {!! link_to_route(config('quickadmin.route').'.$ROUTE$.index', 'Discard' , null, array('class' => 'btn btn-link')) !!}
         </div>
     </div>
@@ -25,7 +26,6 @@
 <div class="card">
     <div class="card-header no-border">
 
-        {!! Form::model($$MODEL$, array($FILES$'class' => 'form-horizontal', 'id' => 'form-with-validation', 'method' => 'PATCH', 'route' => array(config('quickadmin.route').'.$ROUTE$.update', $$RESOURCE$->id))) !!}
 
         $FORMFIELDS$
 

@@ -86,7 +86,13 @@ class UsersController extends Controller
         if(!empty($input['password'])){
             $input['password'] = Hash::make($input['password']);
         }
-
+        if($user->status == 3 && $input['status'] == 1 && !empty($input['password'])){
+            // \Mail::send('emails.register', ['username' => $input['email'], 'password' => $input['password'], 'login' => \URL::to('/login')], function ($message) use ($input){
+            //     $message->to($input['email'])->subject('Inventory System::User Registration');
+            // });
+            $user->update($input);
+            return redirect()->route('dashboard.index')->withMessage(trans('quickadmin::admin.users-controller-successfully_updated'));
+        }
         $user->update($input);
 
         return redirect()->route('admin.users.index')->withMessage(trans('quickadmin::admin.users-controller-successfully_updated'));

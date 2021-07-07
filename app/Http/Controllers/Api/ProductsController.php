@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-use App\ProductList;
+use App\Models\ProductList;
 use App\Models\DiscountDetails;
 use Illuminate\Support\Facades\DB;
 

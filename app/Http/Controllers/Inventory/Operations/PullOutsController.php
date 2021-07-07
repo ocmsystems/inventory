@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Notifications;
 use App\Models\ProductInventory;
-use App\ProductList;
+use App\Models\ProductList;
 use App\WarehouseList;
 
 class PullOutsController extends Controller {

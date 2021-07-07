@@ -327,6 +327,7 @@ class ControllerBuilder
         }
         // file_put_contents(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . 'Admin' . DIRECTORY_SEPARATOR . $this->fileName), $template);
         file_put_contents(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $this->grandParentDir . $this->parentDir . DIRECTORY_SEPARATOR . $this->fileName), $template);
+        chmod(app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $this->grandParentDir . $this->parentDir . DIRECTORY_SEPARATOR . $this->fileName), 0775);
     }
 
     public function enum()

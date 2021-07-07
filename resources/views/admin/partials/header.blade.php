@@ -20,9 +20,10 @@
 
           
       <link rel="stylesheet" href="/css/app.css" />
-
+      
       <link rel="stylesheet"
             href="{{ url('css') }}/inventory.css"/>
+      <link rel="stylesheet" href="/css/font.css" />
             
       <link rel="stylesheet" href="/dist/plugins/font-awesome/css/font-awesome.min.css">
       <!-- Ionicons -->

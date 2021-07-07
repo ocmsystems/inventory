@@ -10,6 +10,7 @@ class UsersLogs extends Model
         'action',
         'action_model',
         'action_id',
+        'ip',
     ];
 
     public function users()

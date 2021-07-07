@@ -32,7 +32,7 @@ class ReceivingDetails extends Model {
 
     
     public function product(){
-        return $this->hasOne('App\ProductList', 'id', 'product_id');
+        return $this->hasOne('App\Models\ProductList', 'id', 'product_id');
     }
 
     public function dr_details(){

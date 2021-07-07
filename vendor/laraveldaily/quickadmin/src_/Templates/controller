@@ -1,0 +1,150 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use App\Http\Controllers\Controller;
+use Redirect;
+use Schema;
+use App\Models\$MODEL$;
+use App\Http\Requests\$CREATEREQUESTNAME$;
+use App\Http\Requests\$UPDATEREQUESTNAME$;
+use Illuminate\Http\Request;
+$FILETRAIT$
+$RELATIONSHIP_NAMESPACES$
+
+class $CLASS$ extends Controller {
+
+	/**
+	 * Display a listing of $COLLECTION$
+	 *
+     * @param Request $request
+     *
+     * @return \Illuminate\View\View
+	 */
+	public function index(Request $request)
+    {
+        $INDEXGET$
+
+		return view('$COLLECTION$.index', compact('$RESOURCE$'));
+	}
+
+
+	
+	public function listing(Request $request){
+
+		if( $request->ajax() ) {
+
+			$data = [];
+			$input = $request->all();
+
+			if (isset($input['length']) && !empty($input['length'])){
+				$input['limit'] = $input['length'];
+			}
+			
+			$obj$MODEL$ = new $MODEL$();
+			$data = $obj$MODEL$->listing($input);
+
+			if(empty($data)){
+				$data['data'] = [];
+				$data['recordsTotal'] = 0;
+				$data['recordsFiltered'] = 0;
+			}
+
+			$data['draw'] = $input['draw'];
+
+			echo  json_encode($data);
+			exit;
+		}else{
+            return abort(401);
+		}
+
+	}
+
+
+	/**
+	 * Show the form for creating a new $RESOURCE$
+	 *
+     * @return \Illuminate\View\View
+	 */
+	public function create()
+	{
+	    $RELATIONSHIPS$
+	    $ENUM$
+	    return view('$COLLECTION$.create'$RELATIONSHIP_COMPACT$);
+	}
+
+	/**
+	 * Store a newly created $RESOURCE$ in storage.
+	 *
+     * @param $CREATEREQUESTNAME$|Request $request
+	 */
+	public function store($CREATEREQUESTNAME$ $request)
+	{
+	    $FILESAVING$
+		$MODEL$::create($request->all());
+
+		return redirect()->route(config('quickroute').'.$RESOURCE$.index');
+	}
+
+	/**
+	 * Show the form for editing the specified $RESOURCE$.
+	 *
+	 * @param  int  $id
+     * @return \Illuminate\View\View
+	 */
+	public function edit($id)
+	{
+		$$RESOURCE$ = $MODEL$::find($id);
+	    $RELATIONSHIPS$
+	    $ENUM$
+		return view('$COLLECTION$.edit', compact('$RESOURCE$'$RELATIONSHIP_COMPACT_EDIT$));
+	}
+
+	/**
+	 * Update the specified $RESOURCE$ in storage.
+     * @param $UPDATEREQUESTNAME$|Request $request
+     *
+	 * @param  int  $id
+	 */
+	public function update($id, $UPDATEREQUESTNAME$ $request)
+	{
+		$$RESOURCE$ = $MODEL$::findOrFail($id);
+
+        $FILESAVING$
+
+		$$RESOURCE$->update($request->all());
+
+		return redirect()->route(config('quickroute').'.$RESOURCE$.index');
+	}
+
+	/**
+	 * Remove the specified $RESOURCE$ from storage.
+	 *
+	 * @param  int  $id
+	 */
+	public function destroy($id)
+	{
+		$MODEL$::destroy($id);
+
+		return redirect()->route(config('quickroute').'.$RESOURCE$.index');
+	}
+
+    /**
+     * Mass delete function from index page
+     * @param Request $request
+     *
+     * @return mixed
+     */
+    public function massDelete(Request $request)
+    {
+        if ($request->get('toDelete') != 'mass') {
+            $toDelete = json_decode($request->get('toDelete'));
+            $MODEL$::destroy($toDelete);
+        } else {
+            $MODEL$::whereNotNull('id')->delete();
+        }
+
+        return redirect()->route(config('quickroute').'.$RESOURCE$.index');
+    }
+
+}

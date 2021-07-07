@@ -35,7 +35,7 @@
                 
                 <li class="nav-item">
                     <a class="nav-link {!! classActiveSegment(1, 'dashboard') !!}" href="{{ route(config('quickadmin.route').'.dashboard.index') }}">
-                        <i class="fas fa-tachometer-alt"></i>
+                        <i class="fas fa-chart-line"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>

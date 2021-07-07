@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon; 
 
 use App\WarehouseList;
-use App\ProductList;
+use App\Models\ProductList;
 use App\Models\ProductInventory;
 
 use App\Models\Notifications;

@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Inventory\Products;
 use App\Http\Controllers\Controller;
 use Redirect;
 use Schema;
-use App\ProductList;
+use App\Models\ProductList;
 use App\Http\Requests\CreateProductListRequest;
 use App\Http\Requests\UpdateProductListRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
-use App\ProductCategories;
+use App\Models\ProductCategories;
 
 
 class ProductListController extends Controller {

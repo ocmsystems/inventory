@@ -8,7 +8,7 @@ use Laraveldaily\Quickadmin\Models\Menu;
 class ModelBuilder
 {
     // Model namespace
-    private $namespace = 'App';
+    private $namespace = 'App\Models';
     // Template
     private $template;
     // Names
@@ -210,6 +210,8 @@ class ModelBuilder
     private function publish($template)
     {
         file_put_contents(app_path('Models/'.$this->fileName), $template);
+        chmod(app_path('Models/'.$this->fileName), 0775);
+        
     }
 
     private function passwordHash()

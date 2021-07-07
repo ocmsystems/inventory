@@ -13,6 +13,12 @@
 
 
                 <div class="login-form-container">
+
+                    @if (session('success'))
+                        <div class="text-success text-center mb-3">
+                            {{ session('success') }}
+                        </div>
+                    @endif 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>{{ trans('quickadmin::auth.whoops') }}</strong> {{ trans('quickadmin::auth.some_problems_with_input') }}
